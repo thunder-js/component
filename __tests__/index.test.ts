@@ -2,8 +2,8 @@ import { newSystem } from '../src'
 import { configFactory } from './fixtures/config'
 import { databaseFactory } from './fixtures/database'
 
-describe('System', () => {
-  it('should works', () => {
+describe('newSystem', () => {
+  it('should return a new system from 2 components', () => {
     const componentMap = {
       config: {
         factory: configFactory({ environment: 'dev' }),
