@@ -26,7 +26,7 @@ export const newSystem = (params: ISystemParams) => {
   const graph = componentMapToGraph(params.componentMap)
   const sorted = topoSort(graph)
 
-  return sorted.reduce((acc, componentId) => {
+  return sorted.reduce((acc: {[key: string]: any}, componentId) => {
     const component = params.componentMap[componentId]
     const dependencies = component.dependencies.reduce((depAcc, dependencyId) => ({
       ...acc,
